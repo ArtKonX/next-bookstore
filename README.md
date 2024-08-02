@@ -1,9 +1,5 @@
 # Веб-приложение “Книжный магазин” BookStore на Next.js с MongoDB и NextAuth
 
-<image
-  src="./public/images/logo.png"
-  alt="Логотип BookStore">
-
 Данный проект представляет собой веб-приложение “Книжный магазин”, который разработан с использованием фреймворка Next.js версии 14 и базы данных MongoDB с помощью MongoDB Compass.
 
 ## Выполненные задачи
