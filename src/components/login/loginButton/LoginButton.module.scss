@@ -1,0 +1,23 @@
+.btn-singin-block {
+    display: flex;
+    justify-content: end;
+
+    .btn-singin-block__btn {
+        padding: 13px;
+        background-color: rgba(104, 100, 100, 0.157);
+        font-size: 17px;
+        border: none;
+        color: black;
+        border-radius: 8px;
+        transition: 1.5s;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(104, 100, 100);
+            transition: 1.5s;
+            color: white;
+        }
+    }
+}

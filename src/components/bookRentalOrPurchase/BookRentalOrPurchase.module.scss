@@ -1,0 +1,129 @@
+.book-rental-or-purchase {
+
+    text-align: center;
+
+    &__title {
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 40px;
+        margin-top: 30px;
+        color: black;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-around;
+
+        .rental-block {
+            display: flex;
+            flex-direction: column;
+
+            .rental-block__title {
+                font-size: 26px;
+                margin-bottom: 30px;
+                color: rgb(104, 100, 100);
+            }
+
+            .price-rental {
+                font-size: 22px;
+                margin-bottom: 30px;
+                color: rgb(104, 100, 100);
+            }
+
+
+            .rental-select {
+                margin-left: 20px;
+                font-size: 18px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                -webkit-border-radius: 0px;
+                appearance: none;
+                padding: 9px;
+                outline: none;
+                background-color: rgba(104, 100, 100, 0.157);
+                border-radius: 8px;
+                border: none;
+                color: black;
+                cursor: pointer;
+                margin-bottom: 20px;
+                width: 400px;
+
+                &:focus {
+                    background-color: rgb(104, 100, 100);
+                    transition: 1.5s;
+                    color: white;
+                    border: none;
+                    outline: none;
+                }
+
+                &:hover {
+                    background-color: rgb(104, 100, 100);
+                    transition: 1.5s;
+                    color: white;
+                    border: none;
+                    outline: none;
+                }
+            }
+
+            .rental-btn {
+                padding: 12px;
+                background-color: rgb(104, 100, 100);
+                color: white;
+                font-size: 20px;
+                border-radius: 10px;
+                transition: 1.5s;
+                border: none;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: black;
+                    transition: 1.5s;
+
+                }
+            }
+
+        }
+
+        .line {
+            height: inherit;
+            width: 2px;
+            background-color: black;
+
+        }
+
+        .purchase-block {
+
+            display: flex;
+            flex-direction: column;
+
+            &__title {
+                font-size: 26px;
+                margin-bottom: 30px;
+                color: rgb(104, 100, 100);
+            }
+
+            .price-purchase {
+                font-size: 22px;
+                margin-bottom: 30px;
+                color: rgb(104, 100, 100);
+            }
+
+            .purchase-btn {
+                padding: 12px;
+                background-color: rgb(104, 100, 100);
+                color: white;
+                font-size: 20px;
+                border-radius: 10px;
+                transition: 1.5s;
+                border: none;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: black;
+                    transition: 1.5s;
+
+                }
+            }
+        }
+    }
+}

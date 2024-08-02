@@ -1,0 +1,26 @@
+.book-cover-block {
+    background-color: rgb(165, 17, 17);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    padding: 40px;
+    width: 250px;
+    margin: 30px;
+    position: relative;
+    border: 1px solid black;
+    height: 288px;
+
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: -21px;
+        width: 20px;
+        height: calc((100%));
+        top: -1px;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        width: 20px;
+        background-color: #ffffee;
+        border: 1px solid black;
+    }
+}

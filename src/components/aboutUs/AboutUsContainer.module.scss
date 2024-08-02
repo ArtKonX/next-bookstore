@@ -1,0 +1,26 @@
+.about-us-container {
+
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 100px;
+    border-radius: 8px;
+
+    .logo-text {
+        font-size: 6rem;
+        color: rgb(104, 100, 100);
+        line-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &_color {
+            color: white;
+            transition: 1.5s;
+            font-size: 4.5rem;
+            background-color: rgb(104, 100, 100);
+            padding: 0 8px;
+            border-radius: 0.9rem;
+        }
+    }
+}

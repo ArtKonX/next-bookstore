@@ -1,0 +1,12 @@
+.container-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100px;
+    // background-color: rgba(9, 87, 189, 0.283);
+    border-bottom: 2px solid black;
+    padding-left: 30px;
+    padding-right: 30px;
+    // border-radius: 6px;
+    margin-bottom: 30px;
+}

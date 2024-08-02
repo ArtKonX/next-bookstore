@@ -1,0 +1,29 @@
+.balance {
+
+    .user-balance-link {
+        text-decoration: none;
+        display: flex;
+        margin-right: 30px;
+        color: rgb(104, 100, 100);
+        font-size: 22px;
+        transition: 1.5s;
+        padding: 6px;
+        align-items: center;
+
+        &:hover {
+            transition: 1.5s;
+            border-bottom: 1px solid rgb(104, 100, 100);
+        }
+    }
+
+    .admin-balance {
+        text-decoration: none;
+        display: flex;
+        margin-right: 30px;
+        color: rgb(104, 100, 100);
+        font-size: 22px;
+        transition: 1.5s;
+        padding: 6px;
+        align-items: center;
+    }
+}

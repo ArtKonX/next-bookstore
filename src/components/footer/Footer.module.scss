@@ -1,0 +1,11 @@
+.footer {
+    text-align: center;
+    margin-top: 10px;
+
+    &::before {
+        content: '';
+        margin-bottom: 10px;
+        display: block;
+        border-top: 2px solid black;
+    }
+}

@@ -1,0 +1,18 @@
+.admin-actions {
+    display: flex;
+    justify-content: center;
+
+    &__link {
+        padding: 12px;
+        background-color: rgb(104, 100, 100);
+        color: white;
+        border-radius: 10px;
+        transition: 1.5s;
+
+        &:hover {
+            background-color: black;
+            transition: 1.5s;
+
+        }
+    }
+}

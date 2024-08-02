@@ -1,0 +1,82 @@
+.admin-registeration-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(104, 100, 100, 0.157);
+        opacity: 0.8;
+        display: block;
+    }
+
+    .admin-registeration {
+        border: 10px solid rgb(104, 100, 100);
+        padding: 30px;
+        border-radius: 20px;
+        background-color: white;
+        max-width: 1000px;
+        z-index: 2;
+        color: black;
+
+        &__title {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        &__form {
+            z-index: 2;
+
+            .form__btn-registeration-block {
+                display: flex;
+                justify-content: end;
+
+
+                .btn-registeration {
+                    padding: 13px;
+                    background-color: rgba(104, 100, 100, 0.157);
+                    font-size: 17px;
+                    border: none;
+                    color: black;
+                    border-radius: 8px;
+                    transition: 1.5s;
+                    margin-top: 15px;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                    display: block;
+
+                    &:hover {
+                        background-color: rgb(104, 100, 100);
+                        transition: 1.5s;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .link-login-block {
+
+            .span-login {
+                font-size: 17px;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

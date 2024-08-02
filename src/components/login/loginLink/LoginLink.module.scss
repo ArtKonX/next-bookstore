@@ -1,0 +1,22 @@
+.login-link-container {
+
+    .link {
+        padding: 13px;
+        background-color: rgba(104, 100, 100, 0.157);
+        font-size: 17px;
+        border: none;
+        color: black;
+        border-radius: 8px;
+        transition: 1.5s;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        display: block;
+
+        &:hover {
+            background-color: rgb(104, 100, 100);
+            transition: 1.5s;
+            color: white;
+        }
+    }
+}

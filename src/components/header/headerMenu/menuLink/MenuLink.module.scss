@@ -1,0 +1,27 @@
+.menu__link {
+    text-decoration: none;
+    display: flex;
+    margin-right: 30px;
+    color: rgb(104, 100, 100);
+    font-size: 22px;
+    display: inline;
+    transition: 1.5s;
+    padding: 6px;
+
+    &:hover {
+        transition: 1.5s;
+        border-bottom: 1px solid rgb(104, 100, 100);
+    }
+}
+
+.menu__link_active {
+    text-decoration: none;
+    display: flex;
+    margin-right: 30px;
+    color: black;
+    font-size: 22px;
+    display: inline;
+    transition: 1.5s;
+    padding: 6px;
+    border-bottom: 1px solid black;
+}

@@ -1,0 +1,36 @@
+.account {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(104, 100, 100, 0.157);
+        opacity: 0.8;
+        display: block;
+    }
+
+    .account-block {
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        border: 10px solid rgb(104, 100, 100);
+        padding: 30px;
+        border-radius: 20px;
+        background-color: white;
+        max-width: 1600px;
+    }
+}

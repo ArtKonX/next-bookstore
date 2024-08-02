@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top:  15px;
+  padding-bottom: 15px;
+  flex-direction: column;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  padding-left: 10px;
+  padding-right: 10px;
+}

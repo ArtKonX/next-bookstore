@@ -1,0 +1,23 @@
+.year-sort {
+
+    &__title {
+        text-align: left;
+        font-size: 20px;
+        margin-bottom: 20px;
+        margin-top: 30px;
+        color: black;
+    }
+
+    &__list {
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        padding: 25px;
+        background-color: rgb(104, 100, 100);
+        border-radius: 12px;
+        list-style: none;
+        margin-bottom: 20px;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}
