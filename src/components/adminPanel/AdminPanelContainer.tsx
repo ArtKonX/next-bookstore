@@ -5,6 +5,8 @@ import AdminPanelActionsContainer from "./adminPanelActions/AdminPanelActions";
 import { useEffect, useState } from "react";
 import { getRoleAndBalance } from "@/utils/apiUtils/apiRequests";
 
+import styles from './AdminPanelContainer.module.scss'
+
 import IAccountInfo from "@/interfaces/account.interface";
 
 export default function AdminPanelContainer() {
@@ -19,7 +21,7 @@ export default function AdminPanelContainer() {
     if (infoAccount?.role != 'admin') return ( <h1 className='admin-panel-block'>Вы не админ(</h1> )
 
     return (
-        <div className='admin-panel'>
+        <div className={styles['admin-panel']}>
             <AdminPanelActionsContainer />
             <BooksContainer />
         </div>

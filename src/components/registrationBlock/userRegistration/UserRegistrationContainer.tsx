@@ -5,7 +5,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import InputBlock from '../inputBlock/InputBlock'
 
 
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import RegisterLink from '../registrationLink/RegisterLink';
 
@@ -51,6 +51,7 @@ const UserRegisterContainer = () => {
                     '/login'
                 )
             }
+
         } catch (error: any) {
             console.error('Failed user registration request:', error);
         }

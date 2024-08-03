@@ -105,7 +105,7 @@ export const AddBookForm = () => {
 
                 <div className={styles['file-upload-block']}>
                     <label className={styles['file-upload']}>
-                        Загрузить книгу:<input className={styles['file-upload__input']} type="file" onChange={handleBookUpload} />
+                        Загрузить книгу:<input className={styles['file-upload__input']} accept=".txt" type="file" onChange={handleBookUpload} />
                     </label>
                     <label className={styles['label-title']}>Книга:</label>
                     {fileBook.length > 0 ? (<span className={styles['file']} key={fileBook[0].lastModified}>{fileBook[0].name}</span>) : (<span className={styles['file']}>Файл не выбран</span>)}

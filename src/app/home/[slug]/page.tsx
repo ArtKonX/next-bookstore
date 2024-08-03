@@ -11,8 +11,6 @@ export default function BookCatagoryPage({ params }: {
 }) {
 
     return (
-        <div>
-            <SortBooks params={params} />
-        </div>
+        <SortBooks params={params} />
     )
 }

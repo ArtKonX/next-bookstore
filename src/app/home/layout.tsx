@@ -9,15 +9,13 @@ export default async function HomeLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className="container">
-            <div className="wrapper">
-                <HeaderContainer />
-                <div className={styles.content}>
-                    <SortBlock />
-                    {children}
-                </div>
-                <Footer/>
+        <div>
+            <HeaderContainer />
+            <div className={styles.content}>
+                <SortBlock />
+                {children}
             </div>
+            <Footer />
         </div>
     );
 }

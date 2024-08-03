@@ -37,11 +37,12 @@ const CatagoryMenu = () => {
     return (
         <div className={styles['catagory']}>
             <h1 className={styles['catagory__title']}>Категория:</h1>
-            <ul className={styles['catagory__list']}>
+            {(books?.length >= 1) ?
+            (<ul className={styles['catagory__list']}>
                 {books?.map((book) => (<li key={book._id.toString()}><CatagoryMenuLink href={`/home/${book.catagory}`} isActive={pathname.replaceAll('%20', '-') === `/home/${book.catagory}`}>
                     {book.catagory.replaceAll('-', ' ')}
                 </CatagoryMenuLink></li>))}
-            </ul>
+            </ul>) : <span className={styles['no-year-sort']}>Книги не добавлены</span>}
         </div>
     )
 };

@@ -1,11 +1,24 @@
 .footer {
-    text-align: center;
-    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    flex-direction: column;
+    max-width: 1380px;
 
     &::before {
         content: '';
+        display: flex;
+        height: 2px;
+        background-color: black;
+        position: relative;
+        width: 100%;
         margin-bottom: 10px;
-        display: block;
-        border-top: 2px solid black;
+
     }
 }

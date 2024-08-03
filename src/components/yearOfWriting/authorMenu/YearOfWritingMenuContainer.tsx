@@ -36,11 +36,13 @@ const yearOfWritingContainer = () => {
     return (
         <div className={styles['year-sort']}>
             <h1 className={styles['year-sort__title']}>Год:</h1>
-            <ul className={styles['year-sort__list']}>
+
+            {(books.length >= 1) ?
+            (<ul className={styles['year-sort__list']}>
                 {books?.map((book) => (<li key={book._id.toString()}><YearOfWritingMenuLink href={`/home/${book.yearOfWriting}`} isActive={pathname === `/home/${book.yearOfWriting}`}>
                     {book.yearOfWriting}
                 </YearOfWritingMenuLink></li>))}
-            </ul>
+            </ul>) : <span className={styles['no-year-sort']}>Книги не добавлены</span>}
         </div>
     );
 };

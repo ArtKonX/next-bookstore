@@ -31,14 +31,18 @@ const AuthorMenuContainer = () => {
         fetchBooks();
     }, []);
 
+    if (!books) return <h1>Loading...</h1>;
+
     return (
         <div className={styles['author-sort']}>
             <h1 className={styles['author-sort__title']}>Автор:</h1>
-            <ul className={styles['author-sort__list']}>
+
+            {(books?.length >= 1) ?
+            (<ul className={styles['author-sort__list']}>
                 {books?.map((book) => (<li key={book._id.toString()}><AuthorMenuLink href={`/home/${book.author}`} isActive={pathname.replaceAll('%20', '-') === `/home/${book.author}`}>
                     {(book.author).replaceAll('-', ' ')}
                 </AuthorMenuLink></li>))}
-            </ul>
+            </ul>) : <span className={styles['no-year-sort']}>Книги не добавлены</span>}
         </div>
     );
 };
