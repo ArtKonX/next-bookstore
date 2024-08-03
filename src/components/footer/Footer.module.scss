@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -10,15 +11,7 @@
     padding-bottom: 15px;
     flex-direction: column;
     max-width: 1380px;
-
-    &::before {
-        content: '';
-        display: flex;
-        height: 2px;
-        background-color: black;
-        position: relative;
-        width: 100%;
-        margin-bottom: 10px;
-
-    }
+    height: 50px;
+    background-color: rgba(104, 100, 100, 0.433);
+    border-radius: 10px;
 }

@@ -5,19 +5,19 @@ import { useEffect, useState } from "react";
 
 import IBook from "@/interfaces/book.interface";
 
-export async function getStaticPaths() {
-    const response = await getBooksData();
-    const books = response.data;
+// export async function getStaticPaths() {
+//     const response = await getBooksData();
+//     const books = response.data;
 
-    const paths = books.map((book: IBook) => ({
-        params: { slug: book?._id.toString() },
-    }));
+//     const paths = books.map((book: IBook) => ({
+//         params: { slug: book?._id.toString() },
+//     }));
 
-    return {
-        paths,
-        fallback: false,
-    };
-}
+//     return {
+//         paths,
+//         fallback: false,
+//     };
+// }
 
 type Params = {
     slug: string
