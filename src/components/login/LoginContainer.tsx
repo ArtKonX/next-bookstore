@@ -18,6 +18,7 @@ export default function LoginContainer() {
     useEffect(() => {
         if (sessionStatus === 'authenticated') {
             router.replace('/home');
+            window.location.reload()
         }
     }, [sessionStatus, router]);
 

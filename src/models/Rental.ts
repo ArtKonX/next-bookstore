@@ -6,6 +6,13 @@ const rentalSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
+    title: {
+        type: String,
+        required: true
+    },
+    author: {
+        type: String, required: true
+    },
     bookId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Book',
@@ -14,7 +21,7 @@ const rentalSchema = new mongoose.Schema({
     rentalDuration: {
         type: Number,
         required: true,
-        enum: [14, 30, 90] // 2 weeks, 1 month, 3 months
+        enum: [14, 30, 90]
     },
     rentalPrice: {
         type: Number,

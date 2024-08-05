@@ -5,19 +5,9 @@ import BookContainer from '@/components/book/BookContainer';
 import styles from './BooksContainer.module.scss';
 import { dmSerifDisplay400 } from '@/styles/fonts-project/fonts';
 
-import { getBooksData } from '@/utils/apiUtils/apiRequests';
 import IBook from '@/interfaces/book.interface';
 
-const BooksContainer = () => {
-
-    const [books, setBooks] = useState<IBook[]>();
-
-    useEffect(() => {
-        const fetchBooks = async () => setBooks(await getBooksData())
-        if (fetchBooks) fetchBooks()
-    }, []);
-
-    if (!books) return <div>Loading...</div>;
+const BooksContainer = ({books}: {books: IBook[]}) => {
 
     return (
         <div className={styles['books-container']}>

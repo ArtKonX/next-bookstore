@@ -6,7 +6,7 @@ import { NextRequest } from "next/server";
 import mongoose from "mongoose";
 
 export const POST = async (request: NextRequest) => {
-    const { name, email, password, balance = 0 } = await request.json();
+    const { name, email, password, balance = 0, listRemindersRent = [] } = await request.json();
 
     await connect();
 
@@ -35,7 +35,8 @@ export const POST = async (request: NextRequest) => {
         email,
         password: hashedPassword,
         balance,
-        role: 'user'
+        role: 'user',
+        listRemindersRent
     });
 
     try {

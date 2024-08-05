@@ -1,7 +1,4 @@
-import HeaderContainer from "@/components/header/HeaderContainer";
-import SortBlock from "@/components/sortingBlock/SortBlockContainer";
-import Footer from "@/components/footer/Footer";
-import styles from './layout.module.scss'
+import LayoutHomeBlock from "@/components/layoutBlock/layoutHomeBlock/LayoutHomeBlock";
 
 export default async function HomeLayout({
     children,
@@ -9,13 +6,6 @@ export default async function HomeLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div>
-            <HeaderContainer />
-            <div className={styles.content}>
-                <SortBlock />
-                {children}
-            </div>
-            <Footer />
-        </div>
+        LayoutHomeBlock({children})
     );
 }

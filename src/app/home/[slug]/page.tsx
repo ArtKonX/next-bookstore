@@ -1,6 +1,6 @@
 'use client'
 
-import SortBooks from "@/components/sort/SortBooks";
+import SortingBased from "@/components/sorting/sortingBased/SortingBased";
 
 type Params = {
     slug: string
@@ -11,6 +11,6 @@ export default function BookCatagoryPage({ params }: {
 }) {
 
     return (
-        <SortBooks params={params} />
+        <SortingBased params={params} />
     )
 }

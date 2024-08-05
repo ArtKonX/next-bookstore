@@ -9,7 +9,7 @@ import Purchase from '@/models/Purchase'
 import { getServerSession } from "next-auth";
 
 export const POST = async (request: NextRequest) => {
-    const { bookId } = await request.json();
+    const { bookId, title, author } = await request.json();
 
     const session = await getServerSession();
 
@@ -49,6 +49,8 @@ export const POST = async (request: NextRequest) => {
         const newPurchase = new Purchase({
             email: session?.user?.email,
             bookId,
+            title,
+            author,
             purchaseDate: new Date(),
             price: book.price
         });

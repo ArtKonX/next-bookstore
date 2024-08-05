@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ChangePrice from "@/components/changePrice/ChangePriceContainer";
+import ChangePrice from "@/components/adminPanel/changePrice/ChangePriceContainer";
 
 export const metadata: Metadata = {
     title: 'ChangePrice',

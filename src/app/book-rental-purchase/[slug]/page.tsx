@@ -34,6 +34,6 @@ export default function BookRentalOrPurchasePage({ params }: {
     }
 
     return (
-        <BookRentalOrPurchase params={params} email={session?.user?.email} bookId={bookOnly._id} />
+        <BookRentalOrPurchase params={params} email={session?.user?.email} bookId={bookOnly} />
     );
 }

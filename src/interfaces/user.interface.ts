@@ -5,4 +5,5 @@ export default interface IUser {
     password: string,
     role: string,
     balance: string,
+    listRemindersRent: []
 }

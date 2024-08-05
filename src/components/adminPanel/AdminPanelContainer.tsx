@@ -2,28 +2,34 @@
 
 import BooksContainer from "@/components/books/BooksContainer";
 import AdminPanelActionsContainer from "./adminPanelActions/AdminPanelActions";
-import { useEffect, useState } from "react";
-import { getRoleAndBalance } from "@/utils/apiUtils/apiRequests";
+import { useContext, useEffect, useState } from "react";
 
 import styles from './AdminPanelContainer.module.scss'
 
-import IAccountInfo from "@/interfaces/account.interface";
+import { AccountContext } from "@/providers/accountContext/AccountContext";
+import { getAllBooksData } from "@/utils/apiUtils/apiRequests";
+import IBook from "@/interfaces/book.interface";
 
 export default function AdminPanelContainer() {
 
-    const [infoAccount, setInfoAccount] = useState<IAccountInfo>();
+    const infoAccount = useContext(AccountContext);
+
+    const [books, setBooks] = useState<IBook[]>();
 
     useEffect(() => {
-        const fetchInfoAccount = async () => setInfoAccount(await getRoleAndBalance())
-        if (fetchInfoAccount) fetchInfoAccount()
+        const fetchBooks = async () => setBooks(await getAllBooksData())
+        if (fetchBooks) fetchBooks()
     }, []);
+
+    if (!books) return <div>Loading...</div>;
+
 
     if (infoAccount?.role != 'admin') return ( <h1 className='admin-panel-block'>Вы не админ(</h1> )
 
     return (
         <div className={styles['admin-panel']}>
             <AdminPanelActionsContainer />
-            <BooksContainer />
+            <BooksContainer books={books}/>
         </div>
     )
 }

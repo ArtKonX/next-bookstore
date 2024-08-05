@@ -2,14 +2,14 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    width: calc(100% - 190px);
-    align-items: start;
+    width: 100%;
     flex-wrap: wrap;
-    position: absolute;
-    left: 190px;
+    position: relative;
+    left: 0;
 
     .books {
         width: 100%;
+        position: relative;
 
 
         &__title {

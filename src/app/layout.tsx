@@ -5,6 +5,8 @@ import "./globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 import SessionProvider from "@/providers/SessionProvider";
+import AccountProvider from "@/providers/AccountProvider";
+
 import { getServerSession } from "next-auth";
 
 export const metadata: Metadata = {
@@ -21,11 +23,13 @@ export default async function RootLayout({
     <html lang="ru">
       <body className={inter.className}>
         <SessionProvider session={session}>
-          <div className="container">
-            <div className="wrapper">
-              {children}
+          <AccountProvider>
+            <div className="container">
+              <div className="wrapper">
+                {children}
+              </div>
             </div>
-          </div>
+          </AccountProvider>
         </SessionProvider>
       </body>
     </html>

@@ -1,0 +1,68 @@
+.form__ishidden-block {
+
+    .form {
+
+        .label-title {
+            font-size: 22px;
+            color: rgb(104, 100, 100);
+        }
+
+        .select {
+            margin-left: 10px;
+            font-size: 16px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -webkit-border-radius: 0px;
+            appearance: none;
+            padding: 6px;
+            outline: none;
+            background-color: rgba(104, 100, 100, 0.157);
+            border-radius: 8px;
+            border: none;
+            color: black;
+            cursor: pointer;
+            margin-bottom: 60px;
+
+            &:focus {
+                background-color: rgb(104, 100, 100);
+                transition: 1.5s;
+                color: white;
+                border: none;
+                outline: none;
+            }
+
+            &:hover {
+                background-color: rgb(104, 100, 100);
+                transition: 1.5s;
+                color: white;
+                border: none;
+                outline: none;
+            }
+        }
+
+        .btn-submit {
+            padding: 13px;
+            background-color: rgba(104, 100, 100, 0.157);
+            font-size: 17px;
+            border: none;
+            color: black;
+            border-radius: 8px;
+            transition: 1.5s;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+
+
+            &:hover {
+                background-color: rgb(104, 100, 100);
+                transition: 1.5s;
+                color: white;
+            }
+        }
+
+    }
+
+
+}

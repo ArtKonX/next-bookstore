@@ -5,6 +5,7 @@ export default interface IBook {
     catagory: string,
     yearOfWriting: number,
     price: number,
+    isHidden: boolean,
     fileBook: string,
 }
 

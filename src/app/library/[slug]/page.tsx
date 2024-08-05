@@ -1,6 +1,6 @@
 'use client'
 import ReaderContainer from "@/components/reader/ReaderContainer";
-import { getBooksData } from "@/utils/apiUtils/apiRequests";
+import { getBook } from "@/utils/apiUtils/apiRequests";
 import { useEffect, useState } from "react";
 
 import IBook from "@/interfaces/book.interface";
@@ -13,21 +13,23 @@ export default function LibraryPage({ params }: {
     params: Params
 }) {
 
-    const [books, setBooks] = useState<IBook[]>([]);
-
-    const bookOnly = books.find((book: IBook) => book._id.toString() === params.slug);
+    const [book, setBook] = useState<IBook>();
 
     useEffect(() => {
-        const books = async () => setBooks(await getBooksData())
-        if (books) books()
+        const fetchBook = async () => {
+            const fetchedBook = await getBook(params);
+            setBook(fetchedBook);
+        };
+
+        fetchBook();
     }, []);
 
-    if (!bookOnly) {
+    if (!book) {
         return <div>Loading...</div>;
     }
 
 
     return (
-        <ReaderContainer params={params} book={bookOnly} />
+        <ReaderContainer params={params} book={book} />
     )
 }

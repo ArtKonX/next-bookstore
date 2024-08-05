@@ -7,6 +7,7 @@ const bookSchema = new mongoose.Schema({
     catagory: { type: String, required: true },
     yearOfWriting: { type: Number, required: true },
     price: { type: Number, required: true },
+    isHidden: { type: Boolean, required: true },
     fileBook: [],
 });
 

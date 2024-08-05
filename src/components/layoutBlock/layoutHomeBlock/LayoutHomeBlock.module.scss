@@ -1,0 +1,10 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .sort-and-books-block {
+        display: flex;
+        position: relative;
+    }
+}

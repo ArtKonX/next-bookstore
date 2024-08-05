@@ -1,6 +1,4 @@
-import HeaderContainer from "@/components/header/HeaderContainer";
-
-import Footer from "@/components/footer/Footer";
+import LayoutBlock from "@/components/layoutBlock/layoutBlock/LayoutBlock";
 
 export default async function HomeLayout({
     children,
@@ -8,12 +6,6 @@ export default async function HomeLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className="container">
-            <div className="wrapper">
-                <HeaderContainer />
-                {children}
-                <Footer />
-            </div>
-        </div>
+        <LayoutBlock children={children} />
     );
 }

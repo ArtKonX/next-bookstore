@@ -27,6 +27,18 @@
         border-radius: 12px;
     }
 
+    &__hidden {
+        position: absolute;
+        left: -40px;
+        bottom: -40px;
+        z-index: 11;
+        font-size: 20px;
+        color: white;
+        background-color: black;
+        padding: 5px;
+        border-radius: 12px;
+    }
+
     .admin-actions {
         position: absolute;
         bottom: 0;

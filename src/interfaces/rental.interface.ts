@@ -5,5 +5,8 @@ export default interface IRental {
     rentalDuration: number,
     rentalPrice: number,
     startDate: Date,
+    title: string,
+    author: string,
+    listRemindersRent: [],
     endDate: Date
 }

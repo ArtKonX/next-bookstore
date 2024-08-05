@@ -1,0 +1,39 @@
+.container-sort-books {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    position: relative;
+    left: 0;
+
+    .sort-books {
+        width: 100%;
+        position: relative;
+
+        &__title {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: black;
+        }
+
+        &__block {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .sort-books__no-books {
+            background-color: rgb(104, 100, 100);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 1000px;
+            width: 100%;
+            margin-bottom: 30px;
+            text-align: center;
+            color: white;
+            font-size: 23px;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AddBookForm } from "@/components/addBook/addBookForm/AddBookForm";
+import { AddBookForm } from "@/components/adminPanel/addBook/addBookForm/AddBookForm";
 
 export const metadata: Metadata = {
     title: 'AddBook',

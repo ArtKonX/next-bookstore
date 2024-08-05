@@ -6,6 +6,13 @@ const purchaseSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
+    title: {
+        type: String,
+        required: true
+    },
+    author: {
+        type: String, required: true
+    },
     bookId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Book',

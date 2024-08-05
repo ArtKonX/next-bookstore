@@ -2,16 +2,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: auto;
+    margin-bottom: 20px;
+    padding-top: 8px;
     width: 100%;
     position: relative;
-    // bottom: 0;
-    padding-top: 15px;
-    padding-bottom: 15px;
     flex-direction: column;
-    max-width: 1380px;
-    height: 50px;
-    background-color: rgba(104, 100, 100, 0.433);
-    border-radius: 10px;
+    border-top: 2px solid black;
 }

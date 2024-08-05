@@ -1,9 +1,8 @@
 import styles from './BookCover.module.scss'
 import Link from 'next/link';
 
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { getRoleAndBalance } from '@/utils/apiUtils/apiRequests';
 import { differenceInDays } from 'date-fns';
 
 import IBookSingle from '@/interfaces/book.interface'
@@ -12,23 +11,18 @@ import IRental from '@/interfaces/rental.interface';
 import IPurchase from '@/interfaces/purchase.interface';
 import { useSession } from "next-auth/react";
 
-import IAccountInfo from "@/interfaces/account.interface";
+import { AccountContext } from '@/providers/accountContext/AccountContext';
 
 
 const BookCover = ({ book }: { book: IBookSingle }) => {
 
-    const [infoAccount, setInfoAccount] = useState<IAccountInfo>();
+    const infoAccount = useContext(AccountContext);
 
     const [payment, setPayment] = useState<IPurchase[]>();
 
     const [rentals, setRentals] = useState<IRental[]>();
 
     const { data: session } = useSession();
-
-    useEffect(() => {
-        const fetchPosts = async () => setInfoAccount(await getRoleAndBalance())
-        if (fetchPosts) fetchPosts()
-    }, []);
 
     const handleRentBook = async () => {
 
@@ -75,7 +69,8 @@ const BookCover = ({ book }: { book: IBookSingle }) => {
                 <h2 className={styles['book-cover__title']}>{book.title}</h2>
                 <p className={styles['book-cover__author']}>{book.author.replaceAll('-', ' ')}</p>
             </Link>
-            {infoAccount?.role === 'user' && (<p className={styles['book-cover__price']}>{isBookPurchased ? displayPrice : displayRentalsDuration}</p>)}
+            <p className={styles['book-cover__price']}>{isBookPurchased ? displayPrice : displayRentalsDuration}</p>
+            {infoAccount?.role === 'admin' && <p className={styles['book-cover__hidden']}>Скрытая: {book.isHidden.toString()}</p>}
         </div>
     );
 };

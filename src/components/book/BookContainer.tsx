@@ -3,7 +3,8 @@ import styles from './BookContainer.module.scss'
 
 import IBookSingle from '@/interfaces/book.interface'
 
-import BookAdminActions from './bookAdminActions/BookAdminActions';
+import BookAdminActions from '../adminPanel/bookAdminActions/BookAdminActions';
+import { usePathname } from 'next/navigation';
 
 type Params = {
     slug: string;
@@ -11,12 +12,16 @@ type Params = {
 
 const BookContainer = ({ book, params }: { book: IBookSingle, params?: Params }) => {
 
+    const pathname = usePathname()
+
     return (
-        <div className={styles['book-cover-block']}>
-            <BookCover
-                book={book}
-            />
-            <BookAdminActions book={book} />
+        <div className={styles['book-block']}>
+            <div className={styles['book-cover-block']}>
+                <BookCover
+                    book={book}
+                />
+            </div>
+            {pathname === '/admin-panel' && <BookAdminActions book={book} />}
         </div>
     );
 };

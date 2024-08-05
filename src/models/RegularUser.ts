@@ -6,6 +6,7 @@ const regularUserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   role: { type: String, default: 'user' },
   balance: { type: Number, default: 0 },
+  listRemindersRent: { type: Object },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
 });

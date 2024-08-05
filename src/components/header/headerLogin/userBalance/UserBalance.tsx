@@ -1,19 +1,12 @@
-import { getRoleAndBalance } from "@/utils/apiUtils/apiRequests";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 
 import styles from './UserBalance.module.scss'
-
-import IAccountInfo from "@/interfaces/account.interface";
+import { AccountContext } from "@/providers/accountContext/AccountContext";
 
 export default function UserBalance() {
 
-    const [infoAccount, setInfoAccount] = useState<IAccountInfo>();
-
-    useEffect(() => {
-        const fetchRoleAndBalance = async () => setInfoAccount(await getRoleAndBalance())
-        if (fetchRoleAndBalance) fetchRoleAndBalance()
-    }, []);
+    const infoAccount = useContext(AccountContext);
 
     return (
         <div className={styles['balance']}>

@@ -1,0 +1,18 @@
+.reminders-users-btn-block {
+    .reminders-users-btn {
+        padding: 12px;
+        background-color: rgb(104, 100, 100);
+        color: white;
+        border-radius: 10px;
+        transition: 1.5s;
+        border: none;
+        height: 50px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: black;
+            transition: 1.5s;
+
+        }
+    }
+}

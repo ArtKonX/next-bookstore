@@ -1,0 +1,20 @@
+.user-number-reminders-block {
+
+    .user-number-reminders {
+        text-decoration: none;
+        background-color: rgb(165, 17, 17);
+        display: flex;
+        margin-right: 30px;
+        color: #ffffee;
+        font-size: 22px;
+        transition: 1.5s;
+        padding: 6px;
+        border-radius: 5px;
+        align-items: center;
+
+        &:hover {
+            transition: 1.5s;
+            background-color: rgba(165, 17, 17, 0.646);
+        }
+    }
+}

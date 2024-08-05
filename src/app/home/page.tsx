@@ -1,15 +1,22 @@
-import type { Metadata } from "next";
-import BooksContainer from "@/components/books/BooksContainer";
+'use client'
 
-export const metadata: Metadata = {
-    title: 'BookStore',
-}
+import BooksContainer from "@/components/books/BooksContainer";
+import { useEffect, useState } from "react";
+import IBook from "@/interfaces/book.interface";
+import { getBooksData } from "@/utils/apiUtils/apiRequests";
 
 export default function HomePage() {
 
+    const [books, setBooks] = useState<IBook[]>();
+
+    useEffect(() => {
+        const fetchBooks = async () => setBooks(await getBooksData())
+        if (fetchBooks) fetchBooks()
+    }, []);
+
+    if (!books) return <div>Loading...</div>;
+
     return (
-        <div>
-            <BooksContainer/>
-        </div>
+        <BooksContainer books={books}/>
     );
 };

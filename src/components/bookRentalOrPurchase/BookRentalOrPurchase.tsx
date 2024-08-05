@@ -9,7 +9,7 @@ import IBook from '@/interfaces/book.interface';
 
 import isRentalPrice from '@/utils/isRentalPrice'
 
-const BookRentalOrPurchase = ({ params, email, bookId }: { params: any, email: string | undefined | null, bookId: object }) => {
+const BookRentalOrPurchase = ({ params, email, bookId }: { params: any, email: string | undefined | null, bookId: IBook }) => {
 
     const [rentalPeriod, setRentalPeriod] = useState('');
     const [book, setBook] = useState<IBook>();
@@ -29,11 +29,14 @@ const BookRentalOrPurchase = ({ params, email, bookId }: { params: any, email: s
         try {
             const response = await axios.post('/api/rent-book', {
                 email,
-                bookId,
+                bookId: bookId._id,
+                title: bookId.title,
+                author: bookId.author,
                 rentalPeriod,
             });
 
             if (response.status == 200) {
+                window.location.reload()
                 router.push(`/library/${params.slug}`)
             }
 
@@ -45,10 +48,13 @@ const BookRentalOrPurchase = ({ params, email, bookId }: { params: any, email: s
     const handleBuyBook = async () => {
         try {
             const response = await axios.post('/api/buy-book', {
-                bookId,
+                bookId: bookId._id,
+                title: bookId.title,
+                author: bookId.author,
             });
 
             if (response.status == 200) {
+                window.location.reload()
                 router.push(`/library/${params.slug}`)
             }
 

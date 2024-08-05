@@ -1,9 +1,9 @@
 'use client'
 
 import styles from './LibraryContainer.module.scss'
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { getBooksData, getRoleAndBalance } from '@/utils/apiUtils/apiRequests';
+import { getBooksData } from '@/utils/apiUtils/apiRequests';
 import { dmSerifDisplay400 } from '@/styles/fonts-project/fonts';
 
 import BookContainer from "../book/BookContainer";
@@ -14,7 +14,7 @@ import IRental from '@/interfaces/rental.interface';
 
 import IBook from '@/interfaces/book.interface';
 
-import IAccountInfo from '@/interfaces/account.interface';
+import { AccountContext } from '@/providers/accountContext/AccountContext';
 
 const LibraryContainer = () => {
 
@@ -24,7 +24,7 @@ const LibraryContainer = () => {
 
     const [books, setBooks] = useState<IBook[]>();
 
-    const [infoAccount, setInfoAccount] = useState<IAccountInfo>();
+    const infoAccount = useContext(AccountContext);
 
     const handlePaymentBook = async () => {
 
@@ -55,11 +55,6 @@ const LibraryContainer = () => {
     useEffect(() => {
         const fetchBooks = async () => setBooks(await getBooksData())
         if (fetchBooks) fetchBooks()
-    }, []);
-
-    useEffect(() => {
-        const fetchInfoAccount = async () => setInfoAccount(await getRoleAndBalance())
-        if (fetchInfoAccount) fetchInfoAccount()
     }, []);
 
 

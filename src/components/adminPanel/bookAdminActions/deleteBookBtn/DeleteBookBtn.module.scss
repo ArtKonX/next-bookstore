@@ -1,0 +1,22 @@
+.btn-delete-book {
+    background-color: rgba(104, 100, 100, 0.157);
+    font-size: 15px;
+    border: none;
+    color: black;
+    border-radius: 8px;
+    transition: 1.5s;
+    bottom: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100px;
+    margin: 10px;
+    padding: 5px 30px;
+
+    &:hover {
+        background-color: rgb(104, 100, 100);
+        transition: 1.5s;
+        color: white;
+    }
+}

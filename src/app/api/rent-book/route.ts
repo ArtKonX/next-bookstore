@@ -9,7 +9,7 @@ import Rental from '@/models/Rental'
 import { getServerSession } from "next-auth";
 
 export const POST = async (request: NextRequest) => {
-    const { email, bookId, rentalPeriod } = await request.json();
+    const { email, title, author, bookId, rentalPeriod } = await request.json();
 
     const session = await getServerSession();
 
@@ -59,6 +59,8 @@ export const POST = async (request: NextRequest) => {
         const newRental = new Rental({
             email,
             bookId,
+            title,
+            author,
             rentalDuration,
             rentalPrice,
             startDate: new Date(),

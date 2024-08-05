@@ -8,7 +8,7 @@ const isRentalPrice = (rentalPeriod, price) => {
         case '3 months':
             return price * 0.5;
         default:
-            return price * 'Не выбрано';
+            return 'Не выбрано';
     }
 }
 

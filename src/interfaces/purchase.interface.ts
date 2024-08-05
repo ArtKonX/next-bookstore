@@ -4,4 +4,6 @@ export default interface IPurchase {
     bookId: object,
     purchaseDate: Date,
     price: number,
+    title: string,
+    author: string,
 }
