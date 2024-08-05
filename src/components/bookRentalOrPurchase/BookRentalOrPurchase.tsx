@@ -36,7 +36,6 @@ const BookRentalOrPurchase = ({ params, email, bookId }: { params: any, email: s
             });
 
             if (response.status == 200) {
-                window.location.reload()
                 router.push(`/library/${params.slug}`)
             }
 
@@ -54,7 +53,6 @@ const BookRentalOrPurchase = ({ params, email, bookId }: { params: any, email: s
             });
 
             if (response.status == 200) {
-                window.location.reload()
                 router.push(`/library/${params.slug}`)
             }
 

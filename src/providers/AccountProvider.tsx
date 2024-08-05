@@ -17,8 +17,13 @@ const AccountProvider: FC<providerProps> = ({
     const [infoAccount, setInfoAccount] = useState<IAccountInfo>();
 
     useEffect(() => {
-        const fetchInfoAccount = async () => setInfoAccount(await getRoleAndBalance())
-        if (fetchInfoAccount) fetchInfoAccount()
+        const fetchInfoAccount = async () => {
+            setInfoAccount(await getRoleAndBalance());
+        };
+
+        const interval = setInterval(fetchInfoAccount, 1500);
+
+        return () => clearInterval(interval);
     }, []);
 
     return (<AccountContext.Provider value={infoAccount}>{children}</AccountContext.Provider>)

@@ -21,7 +21,7 @@ export const AddBookForm = () => {
 
     const [catagory, setCatagory] = useState('');
 
-    const [price, setPrice] = useState<number>(0);
+    const [price, setPrice] = useState<number>(100);
 
     const infoAccount = useContext(AccountContext);
 
