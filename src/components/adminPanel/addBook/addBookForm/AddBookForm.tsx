@@ -78,19 +78,19 @@ export const AddBookForm = () => {
                 <SelectIsHidden setIsHidden={setIsHidden} />
                 <div className={styles['form__input-block']}>
                     <label className={styles['label-title']}>Автор:</label>
-                    <input className={`${roboto.className} ${styles.input}`} type="text" value={author} onChange={(e) => setAuthor(e.target.value.replaceAll(' ' , '-'))} />
+                    <input className={`${roboto.className} ${styles.input}`} required type="text" value={author} onChange={(e) => setAuthor(e.target.value.replaceAll(' ' , '-'))} />
                 </div>
                 <div className={styles['form__input-block']}>
                     <label className={styles['label-title']}>Название книги:</label>
-                    <input className={`${roboto.className} ${styles.input}`} type='text' value={title} onChange={(e) => setTitle(e.target.value)} />
+                    <input className={`${roboto.className} ${styles.input}`} required type='text' value={title} onChange={(e) => setTitle(e.target.value)} />
                 </div>
                 <div className={styles['form__price-input-block']}>
                     <label className={styles['label-title']}>Категория:</label>
-                    <input className={`${roboto.className} ${styles.input}`} type="text" value={catagory} onChange={(e) => setCatagory(e.target.value.replaceAll(' ' , '-'))} />
+                    <input className={`${roboto.className} ${styles.input}`} required type="text" value={catagory} onChange={(e) => setCatagory(e.target.value.replaceAll(' ' , '-'))} />
                 </div>
                 <div className={styles['form__price-input-block']}>
                     <label className={styles['label-title']}>Год написания:</label>
-                    <input className={`${roboto.className} ${styles.input}`} type="number" value={yearOfWriting} onChange={(e) => setYearOfWriting(Number(e.target.value.replaceAll(' ', '')))} />
+                    <input className={`${roboto.className} ${styles.input}`} required type="number" value={yearOfWriting} onChange={(e) => setYearOfWriting(Number(e.target.value.replaceAll(' ', '')))} />
                 </div>
 
                 <div className={styles['form__price-input-block']}>

@@ -22,9 +22,10 @@ type InputsType = {
 const UserRegisterContainer = () => {
     const params = useSearchParams();
     const router = useRouter();
+
     let callbackUrl = params.get('callbackUrl') || '/';
 
-    const { register, handleSubmit, getValues, formState } = useForm<InputsType>({
+    const { register, handleSubmit, getValues, formState: { isSubmitting } } = useForm<InputsType>({
         defaultValues: {
             name: '',
             email: '',
@@ -33,9 +34,8 @@ const UserRegisterContainer = () => {
         },
     });
 
-    const { isSubmitting } = formState;
-
     const handleFormSubmit: SubmitHandler<InputsType> = async (form) => {
+
         const { name, email, password } = form;
 
         try {
@@ -66,16 +66,15 @@ const UserRegisterContainer = () => {
                         label="Имя"
                         id="name"
                         placeholder="Имя..."
-                        register={register('name', { required: 'Name is required' })}
+                        register={register('name')}
                     />
                     <InputBlock
                         label="Электронная почта"
                         id="email"
                         placeholder="Электронная почта..."
                         register={register('email', {
-                            required: 'Email is required',
                             pattern: {
-                                value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                                 message: 'Email is invalid',
                             },
                         })}
@@ -84,14 +83,13 @@ const UserRegisterContainer = () => {
                         label="Пароль"
                         id="password"
                         placeholder="Пароль..."
-                        register={register('password', { required: 'Password is required' })}
+                        register={register('password')}
                     />
                     <InputBlock
                         label="Подтвердите пароль"
                         id="confirmPassword"
                         placeholder="Повторите пароль..."
                         register={register('confirmPassword', {
-                            required: 'Confirm Password is required',
                             validate: (value) => {
                                 const { password } = getValues();
                                 return password === value || 'Passwords should match!';

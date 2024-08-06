@@ -21,6 +21,7 @@ const LoginInput = ({ id, label, placeholder, type }: LoginInputType) => {
                 id={id}
                 className={styles['input-block__input']}
                 placeholder={placeholder}
+                required
             />
         </div>
     )

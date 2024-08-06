@@ -1,3 +1,11 @@
 .form-container {
     width: 100%;
+
+    .error {
+        height: 40px;
+        font-size: 18px;
+        width: 320px;
+        text-align: center;
+        margin-bottom: 5px;
+    }
 }

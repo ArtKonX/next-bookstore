@@ -3,11 +3,27 @@ import LoginInput from '../loginInput/LoginInput';
 import LoginButton from '../loginButton/LoginButton';
 
 import authenticateUser from '@/utils/authUtils/authenticateUser';
+import { useState } from 'react';
+import { useSession } from 'next-auth/react';
 
 export default function LoginForm() {
+
+    const [error, setError] = useState('');
+
+    const { status: sessionStatus } = useSession();
+
+    const handleLogin = (e: any) => {
+        e.preventDefault();
+        authenticateUser(e);
+
+        if (sessionStatus !== 'authenticated') {
+            setError('Неверный email или пароль. Попробуйте снова.');
+        }
+    };
+
     return (
         <div className={styles['form-container']}>
-            <form className={styles['form']} onSubmit={(e) => authenticateUser(e)}>
+            <form className={styles['form']} onSubmit={(e) => handleLogin(e)}>
                 <LoginInput
                     id="email"
                     label="Электронная почта"
@@ -22,6 +38,7 @@ export default function LoginForm() {
                 />
                 <LoginButton text="Войти" />
             </form>
+            <div className={styles['error']}>{error}</div>
         </div>
     );
 };
